@@ -8,12 +8,12 @@ import joblib
 df = pd.read_csv("data/historical_weather_data.csv")
 
 # Convert date column to datetime and ordinal
-df['date'] = pd.to_datetime(df['date'])
-df['date_ordinal'] = df['date'].map(pd.Timestamp.toordinal)
+df['Date'] = pd.to_datetime(df['Date'])
+df['Date_ordinal'] = df['Date'].map(pd.Timestamp.toordinal)
 
 # Features and target
-X = df[['date_ordinal']]
-y = df['temperature']  # Change this if your column name is different
+X = df[['Date_ordinal']]
+y = df['Temperature']  # Change this if your column name is different
 
 # Train model
 model = LinearRegression()
